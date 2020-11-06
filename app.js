@@ -22,22 +22,30 @@ const getPlayerChoice = function () {
   return selection;
 };
 
-const getComputerChoice = function() {
-    const randomValue = Math.random();
-    if (randomValue < 0.34) {
-        return ROCK;
-    } else if (randomValue < 0.67) {
-        return PAPER;
-    } else {
-        return SCISSORS
-    }
+const getComputerChoice = function () {
+  const randomValue = Math.random();
+  if (randomValue < 0.34) {
+    return ROCK;
+  } else if (randomValue < 0.67) {
+    return PAPER;
+  } else {
+    return SCISSORS;
+  }
 };
 
-const getWinner = function(cChoice, pChoice) {
-    if (cChoice === pChoice) {
-        return RESULT_DRAW;
-    } else
-}
+const getWinner = function (cChoice, pChoice) {
+  if (cChoice === pChoice) {
+    return RESULT_DRAW;
+  } else if (
+    (cChoice === ROCK && pChoice === PAPER) ||
+    (cChoice === PAPER && pChoice === SCISSORS) ||
+    (cChoice === SCISSORS && pChoice === ROCK)
+  ) {
+      return RESULT_PLAYER_WINS;
+  } else {
+      RESULT_COMPUTER_WINS;
+  }
+};
 
 startGameBtn.addEventListener('click', function () {
   if (gameIsRunning) {
