@@ -53,6 +53,8 @@ startGameBtn.addEventListener('click', function () {
   }
   gameIsRunning = true;
   console.log('Game is starting...');
-  const playerSelection = getPlayerChoice();
-  const getComputerChoice = getComputerChoice();
+  const playerChoice = getPlayerChoice();
+  const computerChoice = getComputerChoice();
+  const winner = getWinner(computerChoice, playerChoice);
+  console.log(winner);
 });
